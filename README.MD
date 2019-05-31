@@ -1,16 +1,16 @@
-* Installing development ***
+# Installing development #
 
-*** Clone from github ***
+### Clone from github ###
 
-*** Install dependencies ***
+### Install dependencies ###
 cd laravel
 npm install
 
-*** Compile css and js assets *** 
+### Compile css and js assets ### 
 
 npm run dev
 
-#Automatically compile when css or js content changes
+-- Automatically compile when css or js content changes
 npm run watch
 
 
