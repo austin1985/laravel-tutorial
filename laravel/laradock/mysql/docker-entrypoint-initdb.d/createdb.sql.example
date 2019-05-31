@@ -16,6 +16,16 @@
 #     mysql -u root -p < /docker-entrypoint-initdb.d/createdb.sql
 #
 
+CREATE USER 'homestead'@'localhost' IDENTIFIED WITH mysql_native_password BY 'homestead';
+GRANT ALL PRIVILEGES ON *.* TO 'homestead'@'localhost' WITH GRANT OPTION;
+CREATE USER 'homestead'@'%' IDENTIFIED WITH mysql_native_password BY 'homestead';
+GRANT ALL PRIVILEGES ON *.* TO 'homestead'@'%' WITH GRANT OPTION;
+
+CREATE DATABASE IF NOT EXISTS `lsapp` COLLATE 'utf8_general_ci' ;
+GRANT ALL ON `lsapp`.* TO 'homestead'@'%' ;
+FLUSH PRIVILEGES ;
+
+
 #CREATE DATABASE IF NOT EXISTS `dev_db_1` COLLATE 'utf8_general_ci' ;
 #GRANT ALL ON `dev_db_1`.* TO 'default'@'%' ;
 
